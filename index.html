@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260721-2">
+  <link rel="stylesheet" href="css/style.css?v=20260729-1">
   </head>
 <body>
 
@@ -253,55 +253,19 @@
         </div>
       </div>
 
-      <div style="margin-top: 2rem; padding: 1.25rem 1.5rem; background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; justify-content: space-between;">
-        
-        <a href="https://github.com/id8-engineering/seven-hardware" class="btn btn-secondary" target="_blank" rel="noopener" style="white-space: nowrap; flex-shrink: 0;">
-          View Firmware Examples →
-        </a>
-      </div>
     </div>
   </section>
 
   <section id="get-started">
     <div class="section-inner">
       <p class="section-label">Get Started</p>
-      <h2 class="section-title">From unboxed to LTE in three steps</h2>
-      <p class="section-sub">The quickest path to your first LTE-connected prototype using the nRF Connect SDK and Zephyr.</p>
+      <h2 class="section-title">Build your first Seven application</h2>
+      <p class="section-sub">Follow the firmware guide to set up the nRF Connect SDK, build a sample, and flash your board.</p>
 
-      <div class="gs-steps">
-        <div class="gs-step fade-up">
-          <div class="gs-step-num">01</div>
-          <h3 class="gs-step-title">Set up the SDK</h3>
-          <p class="gs-step-body">
-            Install <a href="https://docs.nordicsemi.com/bundle/nrfutil/page/guides/installing.html" target="_blank" rel="noopener">nRF Util</a>, then install nRF Connect SDK v3.2.1 and launch the toolchain shell.
-          </p>
-          <div class="code-block"><span class="cmd">nrfutil install sdk-manager</span>
-<span class="cmd">nrfutil sdk-manager install v3.2.1</span>
-<span class="cmd">nrfutil sdk-manager toolchain launch --ncs-version v3.2.1 --shell</span></div>
-        </div>
-
-        <div class="gs-step fade-up">
-          <div class="gs-step-num">02</div>
-          <h3 class="gs-step-title">Set up workspace</h3>
-          <p class="gs-step-body">
-            Initialize a west workspace from the Seven firmware samples repository and fetch all sources.
-          </p>
-          <div class="code-block"><span class="cmd">mkdir -p ~/src/seven-firmware-samples-workspace && cd ~/src/seven-firmware-samples-workspace</span>
-<span class="cmd">west init -m https://github.com/id8-engineering/seven-firmware-samples --mr main .</span>
-<span class="cmd">cd seven-firmware-samples && west update</span></div>
-        </div>
-
-        <div class="gs-step fade-up">
-          <div class="gs-step-num">03</div>
-          <h3 class="gs-step-title">Build &amp; flash</h3>
-          <p class="gs-step-body">
-            Build a sample application and flash it to the board via <a href="https://shop.segger.com/debug-trace-probes/debug-probes/j-link/j-link-plus-compact" target="_blank" rel="noopener">J-Link</a>.
-          </p>
-          <div class="code-block"><span class="cmd">make sample-hello-world</span>
-<span class="cmd">west flash</span>
-<span class="cmd">west rtt</span>
-<span class="cmt"># Hello World! seven/nrf9151</span></div>
-        </div>
+      <div class="gs-cta fade-up">
+        <a href="https://github.com/id8-engineering/seven-firmware-samples/blob/main/README.md" class="btn btn-primary" target="_blank" rel="noopener">
+          Open Getting Started Guide →
+        </a>
       </div>
 
       <div class="gs-note">
