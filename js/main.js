@@ -4,6 +4,7 @@
 const html = document.documentElement;
 const themeBtn = document.getElementById('themeToggle');
 const themeIcon = document.getElementById('themeIcon');
+const nav = document.querySelector('.nav');
 
 function updateNavBg() {
   const isLight = html.getAttribute('data-theme') === 'light';
@@ -37,7 +38,26 @@ if (mobileThemeBtn) {
   });
 }
 
-// ── Intersection Observer for fade-up ─────────────────────────
+// ── Scroll reveals ─────────────────────────────────────────────
+const revealElements = document.querySelectorAll([
+  'section:not(.hero) .section-label',
+  'section:not(.hero) .section-title',
+  'section:not(.hero) .section-sub',
+  '.spec-table',
+  '.hw-image-col',
+  '.sw-card',
+  '.license-card',
+  '.gs-cta'
+].join(','));
+
+revealElements.forEach(el => el.classList.add('reveal'));
+
+document.querySelectorAll('.sw-grid, .license-grid').forEach(grid => {
+  Array.from(grid.children).forEach((item, index) => {
+    item.style.setProperty('--reveal-delay', `${Math.min(index, 2) * 80}ms`);
+  });
+});
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -45,9 +65,9 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
 
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal, .fade-up').forEach(el => observer.observe(el));
 
 // ── Active nav link ───────────────────────────────────────────
 const sections = document.querySelectorAll('section[id], div[id="top"]');
@@ -74,7 +94,6 @@ const navObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('section[id]').forEach(s => navObserver.observe(s));
 
 // ── Nav background on scroll ──────────────────────────────────
-const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
   updateNavBg();
 }, { passive: true });

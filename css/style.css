@@ -396,6 +396,31 @@ section {
   margin: 0 auto;
   overflow: hidden;
 }
+
+.reveal,
+.fade-up {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.visible,
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .fade-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 section {
   overflow: hidden;
 }
@@ -506,6 +531,64 @@ section {
   color: var(--text);
   font-family: var(--mono);
   font-size: 0.82rem;
+}
+
+.sim-choice {
+  margin-top: 0;
+  padding-top: 0;
+}
+#sim-options { background: var(--bg); }
+.sim-choice .section-title { max-width: 620px; }
+.sim-choice .section-sub {
+  max-width: 620px;
+  margin-bottom: 3rem;
+}
+.sim-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.sim-option {
+  overflow: hidden;
+  min-width: 0;
+  min-height: 170px;
+  padding: 1.75rem;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color 0.2s, background 0.2s;
+}
+.sim-option:hover {
+  border-color: var(--accent);
+  background: var(--bg-3);
+}
+.sim-option-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.sim-option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  flex-shrink: 0;
+}
+.sim-option h4 {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.sim-option p {
+  color: var(--text-2);
+  font-size: 0.84rem;
+  line-height: 1.65;
 }
 
 .hw-image-col {
@@ -929,6 +1012,8 @@ footer {
   /* Hardware */
   .hw-layout { grid-template-columns: 1fr; gap: 2rem; }
   .hw-image-col { position: static; }
+  .sim-choice .section-sub { margin-bottom: 2.5rem; }
+  .sim-choice-grid { grid-template-columns: 1fr; }
 
   /* Specs strip */
   .specs-strip { padding: 1.25rem; }
@@ -963,6 +1048,8 @@ footer {
   section { padding: 3rem 1rem; }
   .section-title { font-size: 1.5rem; }
   .section-sub { font-size: 0.9rem; }
+
+  .sim-option { min-height: 0; }
 
   /* Specs strip → 2 columns */
   .specs-strip-inner { grid-template-columns: repeat(2, 1fr); }
