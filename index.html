@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260729-1">
+  <link rel="stylesheet" href="css/style.css?v=20260731-2">
   </head>
 <body>
 
@@ -23,6 +23,7 @@
       <div class="nav-links">
         <a href="#hardware">Hardware</a>
         <a href="#software">Software</a>
+        <a href="#sim-options">SIM Options</a>
         <a href="#get-started">Get Started</a>
         <a href="#licenses">Open Source</a>
       </div>
@@ -43,6 +44,7 @@
     <div class="nav-mobile" id="mobileNav" style="display:none;flex-direction:column;padding:1rem 1.5rem;gap:0.5rem;background:var(--bg-2);border-bottom:1px solid var(--border);">
       <a href="#hardware" style="color:var(--text-2);text-decoration:none;padding:0.5rem 0;font-size:0.9rem;">Hardware</a>
       <a href="#software" style="color:var(--text-2);text-decoration:none;padding:0.5rem 0;font-size:0.9rem;">Software</a>
+      <a href="#sim-options" style="color:var(--text-2);text-decoration:none;padding:0.5rem 0;font-size:0.9rem;">SIM Options</a>
       <a href="#get-started" style="color:var(--text-2);text-decoration:none;padding:0.5rem 0;font-size:0.9rem;">Get Started</a>
       <a href="#licenses" style="color:var(--text-2);text-decoration:none;padding:0.5rem 0;font-size:0.9rem;">Open Source</a>
       <a href="https://github.com/id8-engineering/seven-hardware" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;padding:0.5rem 0;font-size:0.9rem;">GitHub ↗</a>
@@ -108,7 +110,6 @@
             </tbody>
           </table>
 
-          
         </div>
 
         <div class="hw-image-col">
@@ -131,6 +132,7 @@
 
         </div>
       </div>
+
     </div>
   </section>
 
@@ -256,6 +258,48 @@
     </div>
   </section>
 
+  <section id="sim-options">
+    <div class="section-inner">
+      <div class="sim-choice" aria-labelledby="sim-choice-title">
+        <p class="section-label">SIM options</p>
+        <h2 class="section-title" id="sim-choice-title">Find what suits you best.</h2>
+        <p class="section-sub">Choose the SIM format that fits how you build, deploy, and manage Seven.</p>
+
+        <div class="sim-choice-grid sw-grid">
+          <article class="sim-option sw-card">
+            <div class="sim-option-header sw-card-header">
+              <div class="sim-option-icon sw-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"/></svg>
+              </div>
+              <h4 class="sw-card-title">eSIM</h4>
+            </div>
+            <p class="sw-card-body">Remote profiles for scalable deployments.</p>
+          </article>
+
+          <article class="sim-option sw-card">
+            <div class="sim-option-header sw-card-header">
+              <div class="sim-option-icon sw-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/><path d="M9 13h1M14 13h1M9 17h1M14 17h1"/></svg>
+              </div>
+              <h4 class="sw-card-title">Nano SIM</h4>
+            </div>
+            <p class="sw-card-body">A removable SIM for easy testing and swapping.</p>
+          </article>
+
+          <article class="sim-option sw-card">
+            <div class="sim-option-header sw-card-header">
+              <div class="sim-option-icon sw-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9-4 3 4 3"/><path d="m16 9 4 3-4 3"/><path d="m14 5-4 14"/></svg>
+              </div>
+              <h4 class="sw-card-title">SoftSIM</h4>
+            </div>
+            <p class="sw-card-body">Secure connectivity without dedicated SIM hardware.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="get-started">
     <div class="section-inner">
       <p class="section-label">Get Started</p>
@@ -360,6 +404,6 @@
   </footer>
 
   <!-- ─── JavaScript ───────────────────────────────────────────────── -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=20260731-2"></script>
   </body>
 </html>
