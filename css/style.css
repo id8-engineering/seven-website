@@ -802,6 +802,24 @@ section {
 }
 .gs-note-icon { color: var(--accent); font-size: 1.1rem; flex-shrink: 0; margin-top: 0.05rem; }
 
+/* ─── Contact ────────────────────────────────────────────────────── */
+#contact {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.contact-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 3rem;
+}
+.contact-copy .section-title { margin-bottom: 0.75rem; }
+.contact-copy .section-sub { margin-bottom: 0; }
+.contact-link { min-width: 320px; }
+
 /* ─── Licenses ───────────────────────────────────────────────────── */
 #licenses {
   background: var(--bg-1);
@@ -977,6 +995,7 @@ footer {
   /* Nav → hamburger */
   .nav-links { display: none !important; }
   .nav-right .theme-btn { display: flex; }
+  .nav-right .nav-contact { display: none; }
   .nav-right .nav-github { display: none; }
   #menuToggle { display: flex !important; }
   .nav-mobile.open { display: flex !important; }
@@ -1008,6 +1027,8 @@ footer {
   .sw-grid { grid-template-columns: 1fr; }
   .expansion-layout { grid-template-columns: 1fr; gap: 2rem; }
   .license-grid { grid-template-columns: 1fr; }
+  .contact-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .contact-link { min-width: 0; width: 100%; }
 
   /* Hardware */
   .hw-layout { grid-template-columns: 1fr; gap: 2rem; }
